@@ -25,4 +25,8 @@ jobs:
       - run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
       - run: npm ci
       - run: npm run build
+      - run: |
+          touch .env
+          echo YII_DEBUG=${{ secrets.YII_DEBUG }} >> .env
+          echo YII_ENV=${{ secrets.YII_ENV }} >> .env
       - run: rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --chmod=777 -a -z --delete -r --exclude /.git/ --exclude /.github/ --exclude /.gitignore . dont7panic@dont7panic.ru:/var/www/yii2-study.dont7panic.ru/html/
