@@ -35,6 +35,7 @@ tests/_support/_generated
 
 .DS_Store
 .idea
+.vscode
 *.ai
 *.log
 *.pdf
@@ -49,3 +50,5 @@ Thumbs.db
 **/specs/
 **/specification/
 **/specifications/
+*.local
+.env

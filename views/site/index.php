@@ -2,7 +2,7 @@
 
 /** @var yii\web\View $this */
 
-$this->title = 'Home — vApp';
+$this->title = 'Home — ' . Yii::$app->name;
 ?>
 <div class="site-index">
   <button id="test-click-btn">Click me!</button>

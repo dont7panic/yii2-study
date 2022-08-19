@@ -117,4 +117,14 @@ class SiteController extends Controller {
   public function actionAbout() {
     return $this->render('about');
   }
+
+  public function actionTest() {
+    // echo '<pre>';
+    // var_dump($_POST);
+    // echo '</pre>';
+    // echo json_encode($this->response);
+    // die();
+    return json_encode($this->request->post()['data']);
+    // return json_encode($post->data);
+  }
 }
