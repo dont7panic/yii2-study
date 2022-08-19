@@ -7,8 +7,6 @@ $this->title = 'Home — ' . Yii::$app->name;
 <div class="site-index">
   <button id="test-click-btn">Click me!!</button>
 
-  <?php var_dump($_ENV) ?>
-
   <div class="jumbotron text-center bg-transparent">
     <h1 class="display-4">Congratulations!</h1>
 
