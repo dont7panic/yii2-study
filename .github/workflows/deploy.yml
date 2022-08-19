@@ -25,4 +25,4 @@ jobs:
       - run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
       - run: npm ci
       - run: npm run build
-      - run: rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" -a -z --delete -r --exclude /.git/ --exclude /.github/ --exclude /.gitignore . dont7panic@dont7panic.ru:/var/www/yii2-study.dont7panic.ru/html/
+      - run: rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --chmod=ugo=rwX -a -z --delete -r --exclude /.git/ --exclude /.github/ --exclude /.gitignore . dont7panic@dont7panic.ru:/var/www/yii2-study.dont7panic.ru/html/
