@@ -6,7 +6,7 @@ import { makePostRequest } from './utils';
 const btn = document.querySelector('#test-click-btn');
 
 btn?.addEventListener('click', () => {
-  makePostRequest('./site/test', { id: 1, name: 'zadarius' })
+  makePostRequest('./index.php?r=site%2Ftest', { id: 1, name: 'zadarius' })
     .then(console.log)
     .catch(console.error)
 });
