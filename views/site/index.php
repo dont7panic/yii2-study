@@ -2,10 +2,12 @@
 
 /** @var yii\web\View $this */
 
+use yii\helpers\Url;
+
 $this->title = 'Home — ' . Yii::$app->name;
 ?>
 <div class="site-index">
-  <button id="test-click-btn">Click me!!</button>
+  <button id="test-click-btn" data-url="<?= Url::toRoute('site/test') ?>">Click me!!</button>
 
   <div class="jumbotron text-center bg-transparent">
     <h1 class="display-4">Congratulations!</h1>

@@ -1,7 +1,11 @@
 <?php
 
+use yii\web\Request;
+
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
+
+// $baseUrl = str_replace('/web', '', (new Request())->getBaseUrl());
 
 $config = [
   'id' => 'basic',
@@ -22,7 +26,7 @@ $config = [
       'parsers' => [
         'application/json' => 'yii\web\JsonParser',
       ],
-      // 'baseUrl' => ''
+      'baseUrl' => ''
     ],
     'cache' => [
       'class' => 'yii\caching\FileCache',
@@ -52,6 +56,7 @@ $config = [
     ],
     'db' => $db,
     'urlManager' => [
+      // 'baseUrl' => $baseUrl,
       'enablePrettyUrl' => true,
       'showScriptName' => false,
       'rules' => [],
