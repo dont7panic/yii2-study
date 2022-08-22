@@ -34,4 +34,5 @@ jobs:
           echo DB_NAME=${{ secrets.DB_NAME }} >> .env
           echo DB_USER=${{ secrets.DB_USER }} >> .env
           echo DB_PASSWORD=${{ secrets.DB_PASSWORD }} >> .env
+      - run: ssh dont7panic@dont7panic.ru && sudo chmod 777 -R /var/www/ && exit
       - run: rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --chmod=777 -A -a -z --delete -r --exclude /.git/ --exclude /.github/ --exclude /.gitignore . dont7panic@dont7panic.ru:/var/www/yii2-study.dont7panic.ru/html/
