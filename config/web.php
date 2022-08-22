@@ -17,6 +17,10 @@ $config = [
     '@npm'   => '@vendor/npm-asset',
   ],
   'components' => [
+    'customComponent' => [
+      'class' => 'app\services\CustomClass',
+      'foo' => 'hello'
+    ],
     'assetManager' => [
       'appendTimestamp' => true
     ],
