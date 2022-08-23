@@ -119,14 +119,11 @@ class SiteController extends Controller {
   }
 
   public function actionTest() {
-    $isAjax = Yii::$app->request->isAjax;
-
     Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
 
     return [
       'data' => $this->request->post(),
-      'isAjax' => $isAjax,
-      'server' => $_SERVER
+      'isAjax' => Yii::$app->request->isAjax
     ];
   }
 }
